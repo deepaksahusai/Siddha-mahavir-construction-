@@ -1,19 +1,689 @@
-<section id="contact">
-  <h2>Contact Us</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="contact">
-    <h3>Siddha Mahavir Construction & Developers</h3>
+<title>Siddha Mahavir Construction & Developers</title>
 
-    <p>📞 Phone: 
-      <a href="tel:7064616758">7064616758</a>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f5f5f5;
+  color:#222;
+  line-height:1.6;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#111;
+  color:white;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+nav{
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:#ffb400;
+}
+
+/* HERO */
+.hero{
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  padding:70px 7%;
+  color:white;
+  position:relative;
+  background:
+    linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.badge{
+  display:inline-block;
+  background:#ffb400;
+  color:#111;
+  padding:10px 25px;
+  border-radius:30px;
+  font-weight:bold;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:1.05;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:20px;
+  max-width:700px;
+  margin-bottom:35px;
+}
+
+.buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:16px 30px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:17px;
+}
+
+.btn-primary{
+  background:#ffb400;
+  color:#111;
+}
+
+.btn-light{
+  background:white;
+  color:#111;
+}
+
+/* SECTIONS */
+section{
+  padding:75px 7%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#666;
+}
+
+/* ABOUT */
+.about{
+  background:white;
+}
+
+.about-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about-box{
+  background:#f7f7f7;
+  padding:30px;
+  border-radius:15px;
+  border-left:5px solid #ffb400;
+}
+
+.about-box h3{
+  margin-bottom:15px;
+}
+
+/* SERVICES */
+.services{
+  background:#f5f5f5;
+}
+
+.service-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card .icon{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+/* PROJECTS */
+.projects{
+  background:white;
+}
+
+.project-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.project{
+  overflow:hidden;
+  border-radius:15px;
+  background:#111;
+  color:white;
+}
+
+.project img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+}
+
+.project div{
+  padding:20px;
+}
+
+/* WHY US */
+.why{
+  background:#111;
+  color:white;
+}
+
+.why-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  text-align:center;
+}
+
+.why-box{
+  padding:25px;
+  border:1px solid #333;
+  border-radius:12px;
+}
+
+.why-box strong{
+  display:block;
+  font-size:28px;
+  color:#ffb400;
+  margin-bottom:8px;
+}
+
+/* CONTACT */
+.contact{
+  background:#f5f5f5;
+}
+
+.contact-box{
+  max-width:900px;
+  margin:auto;
+  background:white;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.contact-item{
+  margin:18px 0;
+  font-size:18px;
+}
+
+.contact-item a{
+  color:#0759a5;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.contact-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.whatsapp{
+  background:#25D366;
+  color:white;
+}
+
+.call{
+  background:#ffb400;
+  color:#111;
+}
+
+.email{
+  background:#111;
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+}
+
+footer p{
+  margin:5px;
+}
+
+@media(max-width:800px){
+
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav{
+    gap:16px;
+  }
+
+  .hero{
+    min-height:85vh;
+    padding:55px 6%;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  section{
+    padding:60px 6%;
+  }
+}
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:17px;
+  }
+
+  nav{
+    gap:12px;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .badge{
+    font-size:14px;
+    padding:9px 18px;
+  }
+
+  .buttons,
+  .contact-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    text-align:center;
+    width:100%;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-box{
+    padding:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Siddha Mahavir Construction</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="badge">BUILD • DESIGN • DELIVER</div>
+
+    <h1>
+      Siddha Mahavir<br>
+      Construction & Developers
+    </h1>
+
+    <p>
+      Quality construction, modern design and reliable service
+      for your dream home and building projects.
     </p>
 
-    <p>📧 Email: 
+    <div class="buttons">
+      <a class="btn btn-primary" href="#contact">
+        Contact Us
+      </a>
+
+      <a class="btn btn-light" href="#services">
+        Our Services
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="about">
+
+  <div class="section-title">
+    <h2>About Us</h2>
+    <p>Building your vision with quality and care.</p>
+  </div>
+
+  <div class="about-grid">
+
+    <div>
+      <h2>Siddha Mahavir Construction & Developers</h2>
+
+      <p>
+        We provide reliable construction and building solutions
+        with a focus on quality, modern design and customer
+        satisfaction.
+      </p>
+
+      <br>
+
+      <p>
+        From planning and construction to finishing work,
+        we aim to turn your dream project into reality.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <h3>Our Mission</h3>
+
+      <p>
+        To deliver strong, beautiful and practical spaces
+        with professional workmanship and dependable service.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="services" class="services">
+
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Complete solutions for your construction needs.</p>
+  </div>
+
+  <div class="service-grid">
+
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3>House Construction</h3>
+      <p>
+        Complete residential construction from foundation
+        to finishing.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📐</div>
+      <h3>Modern Design</h3>
+      <p>
+        Modern and practical designs for comfortable living spaces.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏗️</div>
+      <h3>Building Construction</h3>
+      <p>
+        Reliable construction solutions for different building projects.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧱</div>
+      <h3>Renovation</h3>
+      <p>
+        Upgrade and transform existing spaces with quality finishing.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Interior & Finishing</h3>
+      <p>
+        Attractive interiors and professional finishing work.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔧</div>
+      <h3>Construction Support</h3>
+      <p>
+        Assistance throughout your construction project.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects" class="projects">
+
+  <div class="section-title">
+    <h2>Our Projects</h2>
+    <p>Ideas and spaces built with attention to detail.</p>
+  </div>
+
+  <div class="project-grid">
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+        alt="Modern house">
+      <div>
+        <h3>Modern Home</h3>
+        <p>Contemporary residential design.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
+        alt="Interior design">
+      <div>
+        <h3>Luxury Interior</h3>
+        <p>Elegant and comfortable interiors.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80"
+        alt="Luxury house">
+      <div>
+        <h3>Premium Residence</h3>
+        <p>Modern architecture and quality finishing.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="why">
+
+  <div class="section-title">
+    <h2>Why Choose Us?</h2>
+    <p>Quality • Trust • Service</p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-box">
+      <strong>01</strong>
+      <span>Quality Work</span>
+    </div>
+
+    <div class="why-box">
+      <strong>02</strong>
+      <span>Modern Design</span>
+    </div>
+
+    <div class="why-box">
+      <strong>03</strong>
+      <span>Reliable Service</span>
+    </div>
+
+    <div class="why-box">
+      <strong>04</strong>
+      <span>Customer Focus</span>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact">
+
+  <div class="section-title">
+    <h2>Contact Us</h2>
+    <p>Let's discuss your next construction project.</p>
+  </div>
+
+  <div class="contact-box">
+
+    <h2>Siddha Mahavir Construction & Developers</h2>
+
+    <div class="contact-item">
+      📞 Phone:
+      <a href="tel:7064616758">7064616758</a>
+    </div>
+
+    <div class="contact-item">
+      📧 Email:
       <a href="mailto:siddhamahavirconstruction@gmail.com">
         siddhamahavirconstruction@gmail.com
       </a>
-    </p>
+    </div>
 
-    <p>📍 Serving Bhubaneswar & Cuttack</p>
+    <div class="contact-item">
+      📍 Serving Bhubaneswar & Cuttack
+    </div>
+
+    <div class="contact-buttons">
+
+      <a
+        class="btn call"
+        href="tel:7064616758">
+        📞 Call Now
+      </a>
+
+      <a
+        class="btn whatsapp"
+        href="https://wa.me/917064616758"
+        target="_blank">
+        💬 WhatsApp
+      </a>
+
+      <a
+        class="btn email"
+        href="mailto:siddhamahavirconstruction@gmail.com">
+        ✉️ Email Us
+      </a>
+
+    </div>
+
   </div>
+
 </section>
+
+<footer>
+
+  <p><strong>Siddha Mahavir Construction & Developers</strong></p>
+
+  <p>Quality Construction • Modern Design • Reliable Service</p>
+
+  <p>© 2026 Siddha Mahavir Construction & Developers</p>
+
+</footer>
+
+</body>
+</html>
